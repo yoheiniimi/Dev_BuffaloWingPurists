@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Buffalo Wing Purists - Japan Chapter</title>
+
+  <meta
+    name="description"
+    content="Buffalo Wing Purists - Japan Chapter. We preserve the tradition of classic Buffalo wings in Japan."
+  />
+
+  <style>
+    :root {
+      --red: #c62828;
+      --orange: #f57c00;
+      --gold: #d4af37;
+      --dark: #101010;
+      --panel: #1a1a1a;
+      --text: #f4f1ea;
+      --muted: #b8b1a6;
+      --line: #3a3a3a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        "Helvetica Neue",
+        Arial,
+        "Noto Sans JP",
+        sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(198, 40, 40, 0.25),
+          transparent 35%
+        ),
+        linear-gradient(
+          180deg,
+          #181818 0%,
+          #090909 100%
+        );
+    }
+
+    .card {
+      width: 100%;
+      max-width: 960px;
+      overflow: hidden;
+      background: rgba(20, 20, 20, 0.96);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+    }
+
+    header {
+      padding: 56px 36px 44px;
+      text-align: center;
+      border-bottom: 4px solid var(--red);
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--orange);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .chapter {
+      margin-top: 14px;
+      color: var(--orange);
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .jp-title {
+      margin-top: 18px;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      font-weight: 700;
+    }
+
+    .mission {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      padding: 42px 36px 28px;
+    }
+
+    .lang-block {
+      padding: 26px;
+      background: var(--panel);
+      border: 1px solid #2d2d2d;
+      border-radius: 14px;
+    }
+
+    .lang-label {
+      margin-bottom: 12px;
+      color: var(--orange);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      margin-bottom: 12px;
+      font-size: 1.18rem;
+      font-weight: 700;
+    }
+
+    .body-text {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .principles {
+      padding: 20px 36px 42px;
+    }
+
+    .section-title {
+      margin-bottom: 24px;
+      color: var(--red);
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .rules {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .rule {
+      padding: 22px;
+      text-align: center;
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 14px;
+    }
+
+    .core-rule:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .rule-number {
+      margin-bottom: 8px;
+      color: var(--orange);
+      font-size: 0.85rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .rule h3 {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+    }
+
+    .rule p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .rule p + p {
+      margin-top: 8px;
+    }
+
+    .standards {
+      padding: 10px 36px 42px;
+    }
+
+    .standard-intro {
+      max-width: 760px;
+      margin: -6px auto 26px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .standard-intro p + p {
+      margin-top: 10px;
+    }
+
+    .standard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .standard-card {
+      padding: 24px;
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 14px;
+    }
+
+    .standard-card.gold {
+      border-top: 4px solid var(--gold);
+    }
+
+    .standard-card.recognized {
+      border-top: 4px solid var(--orange);
+    }
+
+    .standard-label {
+      margin-bottom: 10px;
+      color: var(--orange);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .standard-card.gold .standard-label {
+      color: var(--gold);
+    }
+
+    .standard-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+    }
+
+    .standard-card p,
+    .outside-standard p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .standard-card p + p,
+    .outside-standard p + p {
+      margin-top: 8px;
+    }
+
+    .outside-standard {
+      margin-top: 18px;
+      padding: 20px 22px;
+      background: #101010;
+      border: 1px solid #3a3a3a;
+      border-radius: 12px;
+    }
+
+    .outside-standard strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--red);
+      letter-spacing: 0.06em;
+    }
+
+    .optional-standard {
+      padding: 10px 36px 42px;
+    }
+
+    .optional-intro {
+      max-width: 760px;
+      margin: -6px auto 26px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .optional-intro p + p {
+      margin-top: 10px;
+    }
+
+    .optional-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .optional-card {
+      padding: 22px;
+      text-align: center;
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 14px;
+    }
+
+    .optional-card.recognized {
+      border-top: 4px solid var(--orange);
+    }
+
+    .optional-card.purist {
+      border-top: 4px solid var(--gold);
+    }
+
+    .optional-label {
+      margin-bottom: 10px;
+      color: var(--orange);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .optional-card.purist .optional-label {
+      color: var(--gold);
+    }
+
+    .optional-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+    }
+
+    .optional-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .optional-card p + p {
+      margin-top: 8px;
+    }
+
+    .statement {
+      padding: 34px 36px;
+      text-align: center;
+      background: #0c0c0c;
+      border-top: 1px solid var(--line);
+    }
+
+    .statement p {
+      max-width: 720px;
+      margin: 0 auto 18px;
+      color: var(--muted);
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 14px 30px;
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      background: var(--red);
+      border-radius: 999px;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .cta:hover {
+      background: #a91f1f;
+      transform: translateY(-2px);
+    }
+
+    .cta:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 4px;
+    }
+
+    footer {
+      padding: 22px;
+      color: #777;
+      font-size: 0.85rem;
+      text-align: center;
+      background: #070707;
+    }
+
+    @media (max-width: 760px) {
+      header,
+      .mission,
+      .principles,
+      .standards,
+      .optional-standard,
+      .statement {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .mission,
+      .rules,
+      .standard-grid,
+      .optional-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="card">
+
+      <header>
+        <div class="eyebrow">Preserving the Original</div>
+
+        <h1>
+          Buffalo Wing<br />
+          Purists
+        </h1>
+
+        <div class="chapter">Japan Chapter</div>
+
+        <div class="jp-title">
+          バッファローウイングピュアリスト 日本支部
+        </div>
+      </header>
+
+      <section class="mission">
+        <div class="lang-block">
+          <div class="lang-label">English</div>
+
+          <p class="lead">
+            We are not reinventing Buffalo Wings.
+          </p>
+
+          <p class="body-text">
+            We preserve the tradition of classic Buffalo wings,
+            cherished by American purists.
+          </p>
+        </div>
+
+        <div class="lang-block">
+          <div class="lang-label">日本語</div>
+
+          <p class="lead">
+            私たちは、バッファローウイングを再発明しない。
+          </p>
+
+          <p class="body-text">
+            本場アメリカの「ピュアリスト」に愛される
+            クラシックなバッファローウイングの伝統を守ります。
+          </p>
+        </div>
+      </section>
+
+      <section class="principles core-rules" id="core-rules" aria-labelledby="core-rules-title" data-score-items="5">
+        <h2 class="section-title" id="core-rules-title">The Five Core Rules</h2>
+
+        <!-- Evaluation contract: only these five data-scored="true" rules determine
+             compliance: 5/5 = 100%. Status and notes are separate fields.
+             Future table: .evaluation-table with Rule | Status | Notes;
+             rows and chart axes reuse data-rule-id. An optional sixth diagram axis
+             is informational only and must never enter the score denominator. -->
+        <div class="rules">
+          <article class="rule core-rule" id="no-batter" data-rule-id="no-batter" data-scored="true">
+            <div class="rule-number">01</div>
+            <h3 class="rule-title" lang="en">No Batter</h3>
+            <p class="rule-summary" lang="en">No batter. Naked wings.</p>
+            <p lang="ja">衣をつけない。小麦粉、片栗粉などを使わず、手羽をそのまま揚げる。</p>
+          </article>
+
+          <article class="rule core-rule" id="no-marinade" data-rule-id="no-marinade" data-scored="true">
+            <div class="rule-number">02</div>
+            <h3 class="rule-title" lang="en">No Marinade</h3>
+            <p class="rule-summary" lang="en">No marinade. No pre-seasoning.</p>
+            <p lang="ja">揚げる前に下味をつけない。塩、スパイス、調味液などによる事前の味付けを行わない。</p>
+          </article>
+
+          <article class="rule core-rule" id="no-compromise" data-rule-id="no-compromise" data-scored="true" aria-describedby="sauce-standard-title">
+            <div class="rule-number">03</div>
+            <h3 class="rule-title" lang="en">No Compromise</h3>
+            <p class="rule-summary" lang="en">Classic Buffalo sauce.</p>
+            <p lang="ja">クラシックなBuffalo Sauceを使用する。ソースの基準は下記のPurists' Sauce Standardへ。</p>
+          </article>
+
+          <article class="rule core-rule" id="no-additives" data-rule-id="no-additives" data-scored="true">
+            <div class="rule-number">04</div>
+            <h3 class="rule-title" lang="en">No Additives</h3>
+            <p class="rule-summary" lang="en">No added saltiness, sweetness, acidity, aroma, or richness beyond the classic Buffalo Wing composition.</p>
+            <p lang="ja">クラシックなBuffalo Wingの構成を超えて、塩味・甘味・酸味・香り・油脂感を追加しない。</p><p lang="en">Includes culinary additions; excludes frying oil and Gold Standard butter.</p><p lang="ja">食品表示上の添加物に限らず、料理への追加全般が対象。揚げ油とGold Standardのバターは除きます。</p>
+          </article>
+          <!-- No Additives covers culinary additions, not just legally defined food additives:
+               salt, sugar, honey, extra vinegar/lemon, garlic, spices, smoke flavor,
+               olive/sesame oil, and extra seasoning sauces, including umami seasonings.
+               Frying oil is a cooking medium and excluded. Butter in the Gold Standard
+               is part of the Buffalo sauce itself and excluded. This rule concerns the
+               wings/sauce, not the separately served optional dressing. -->
+
+          <article class="rule core-rule" id="wing-cuts" data-rule-id="wing-cuts" data-scored="true">
+            <div class="rule-number">05</div>
+            <h3 class="rule-title" lang="en">Wing Cuts</h3>
+            <p class="rule-summary" lang="en">Natural wing cuts only. No reshaping.</p>
+            <p lang="ja">手羽先・手羽中・手羽元を自然な形で使用する。チューリップ加工などの成形や、脚のDrumstick（下もも）は対象外。</p>
+          </article>
+          <!-- Future terminology note: Drumette = 手羽元; Flat / Wingette = 手羽中;
+               Wing Tip = 手羽先側. No moving meat toward one end of the bone. -->
+        </div>
+      </section>
+
+      <section class="standards" id="sauce-standard" data-related-rule="no-compromise" aria-labelledby="sauce-standard-title">
+        <h2 class="section-title" id="sauce-standard-title">Purists' Sauce Standard</h2>
+        <div class="standard-intro">
+          <p lang="en">The sauce reference for Core Rule 03: No Compromise.</p>
+          <p lang="ja">必須ルール03「No Compromise」のソース基準です。</p>
+        </div>
+
+        <div class="standard-grid">
+          <article class="standard-card gold" data-sauce-tier="gold">
+            <div class="standard-label">Gold Standard</div>
+            <h3 lang="en">Frank's RedHot Original<br />+<br />Melted Butter</h3>
+            <p lang="en">The classic recipe. Our highest standard.</p>
+            <p lang="ja">Frank's RedHot Original＋溶かしバター。保存・継承するクラシックレシピとして、最上位に置きます。</p>
+          </article>
+
+          <article class="standard-card recognized" data-sauce-tier="ready-made">
+            <div class="standard-label">Recognized Ready-Made Option</div>
+            <h3 lang="en">Frank's RedHot Buffalo Wings Sauce</h3>
+            <p lang="en">A practical, shelf-stable, ready-made Buffalo sauce option; not Original + real butter, and not the Gold Standard recipe.</p>
+            <p lang="ja">保存性と実用性を考慮した完成済みのBuffalo Sauceとして認めます。Original＋本物のバターという伝統的レシピそのものではなく、Gold Standardとは区別します。</p>
+          </article>
+        </div>
+
+        <div class="outside-standard">
+          <strong>Outside the Standard / 基準の対象外</strong>
+          <p lang="en">Other brands and Buffalo-style adaptations are not Gold Standard. Added flavors fall outside the classic composition preserved by BWP.</p>
+          <p lang="ja">他社製ソースやBuffalo風の別系統のソースはGold Standardに含めません。味や香りを追加したものは、BWPが保存するクラシックな型とは異なります。</p>
+        </div>
+      </section>
+
+      <section class="optional-standard" id="optional-standard" data-rule-id="optional-standard" data-scored="false" aria-labelledby="optional-standard-title">
+        <h2 class="section-title" id="optional-standard-title">Optional Standard</h2>
+        <div class="optional-intro">
+          <p lang="en">Not required. No deduction if absent. All five Core Rules met = 100%: a complete Classic Buffalo Wing, with or without sides.</p>
+          <p lang="ja">必須ではなく、無くても減点しません。付け合わせの有無にかかわらず、必須5ルールをすべて満たせば100%の完全なClassic Buffalo Wingです。</p>
+        </div>
+
+        <div class="optional-grid">
+          <article class="optional-card recognized">
+            <div class="optional-label">Traditional Accompaniments</div>
+            <h3 lang="en">Celery + Blue Cheese Dressing</h3>
+            <p lang="ja">セロリ＋ブルーチーズソース</p>
+            <p lang="en">The traditional pairing. BWP does not prescribe a dressing recipe.</p>
+            <p lang="ja">伝統的な付け合わせの組み合わせです。BWPはブルーチーズソースの特定レシピを規格化しません。</p>
+          </article>
+        </div>
+        <!-- Future column link slot: add a visible link here only after its page exists.
+             Why We Don’t Define the Blue Cheese Dressing Recipe
+             なぜブルーチーズソースのレシピを固定しないのか
+             Editorial scope: historical recipes vary in mayonnaise, sour cream,
+             buttermilk, Worcestershire sauce, garlic, black pepper and acidity;
+             insufficient evidence supports declaring one uniquely authentic recipe.
+             Optional evaluation: absent = N/A; celery + blue cheese dressing = conforming;
+             different accompaniments = explain in Notes. Always excluded from scoring. -->
+      </section>
+      <section class="statement">
+        <p lang="en">BWP preserves a classic form; we do not rate deliciousness or attack others' cooking. “Outside the Standard” means outside the form we preserve, not bad or wrong.</p>
+        <p lang="ja">BWPは料理の美味しさを採点したり、他店や他人の料理を攻撃したりする団体ではありません。「Outside the Standard」は、保存・継承する型とは異なるという意味で、「まずい」「間違い」ではありません。</p>
+        <p>
+          Our classic Buffalo Wing tradition,
+          practiced and preserved in Japan.
+        </p>
+
+        <p>
+          私たちは、クラシック・バッファローウイングの
+          型を日本で守り、伝えます。
+        </p>
+
+        <a
+          class="cta"
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Join the Community
+        </a>
+      </section>
+
+      <footer>
+        © 2026 Buffalo Wing Purists - Japan Chapter
+      </footer>
+
+    </section>
+  </main>
+</body>
+</html>
